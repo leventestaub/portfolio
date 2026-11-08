@@ -52,10 +52,10 @@ The RL controller met the 1 mm requirement on every target, without overshoot. P
 **My part:** the execution algorithm (turning the chosen move into the arm's pick-and-place sequence), and help with the piece detection.
 
 ## 3. Humanoid robot experiments
-**Experimental work (Jan 2026)** on a Unitree G1 humanoid (29 degrees of freedom, dexterous five-finger hands): walking and balancing while holding objects.
+**Experimental work (Jan 2026)** on a real Unitree G1 humanoid (29 degrees of freedom, dexterous five-finger hands): walking and balancing while holding objects.
 - A **pose capture and replay** tool in Python on the Unitree DDS SDK: teach arm and hand poses from the keyboard, save them as a JSON pose library, and replay them as sequences, with an optional waist lock.
 - Upper-body pose commands published over **ROS 2** to NVIDIA's GR00T whole-body controller, which keeps the robot walking and balanced while the arms and hands move.
-- Simulation in **Isaac Sim / Isaac Lab** for testing poses, including a comparison of hand models.
+- Simulation in **Isaac Sim / Isaac Lab** for trying poses before running them on the robot, including a comparison of hand models.
 
 This was exploratory: no benchmark or measured results.
 
