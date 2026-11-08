@@ -1,6 +1,6 @@
 # Project write-ups
 
-Write-ups of my project work: the problem, the architecture, the results, my part and the limitations. The code of school and team projects lives in private repositories.
+Write-ups of my project work: the problem, the architecture, the results, my part and the limitations. The code of team projects lives in private repositories.
 
 | Project | What it is | Stack |
 |---|---|---|

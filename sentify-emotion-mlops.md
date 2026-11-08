@@ -1,8 +1,8 @@
 # Sentify · Emotion-classification MLOps pipeline
 
-**Group project for a media-production client: give it a video or audio clip, get back a transcript with an emotion label and confidence for every sentence.**
+**For a media-production client: give it a video or audio clip, get back a transcript with an emotion label and confidence for every sentence.**
 
-The brief was an MLOps module (BUas, April–June 2026), so the focus was everything around the model: packaging, serving, monitoring, and a retraining loop that only promotes a new model when it is measurably better, with the same package running in Azure and on an on-premise server.
+A team project (April–June 2026) focused on everything around the model: packaging, serving, monitoring, and a retraining loop that only promotes a new model when it is measurably better, with the same package running in Azure and on an on-premise server.
 
 ![Sentify advert: paste a video URL, get per-sentence emotions, word-level explanations and the audience's reaction](images/sentify/sentify-advert.gif)
 
@@ -48,4 +48,4 @@ The model lifecycle: the Azure ML retraining pipeline and its fine-tune mode, th
 
 **Stack:** PyTorch · Transformers · FastAPI · Typer · React · Streamlit · MLflow · Airflow · Postgres · MinIO · Docker Compose · Portainer · Azure ML · GitHub Actions
 
-*The code lives in a private school repository.*
+*The code lives in a private repository.*

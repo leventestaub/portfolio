@@ -2,7 +2,7 @@
 
 **Detect when a credit-card fraud model stops being trustworthy, and turn the signals into a clear verdict: retrain, watch, or leave it alone.**
 
-A three-person BUas project (April 2026). We trained a fraud classifier, ran it on five simulated production batches with different kinds of drift, and built a monitor, a rule-based retraining trigger and a dashboard around it.
+A three-person team project (April 2026). We trained a fraud classifier, ran it on five simulated production batches with different kinds of drift, and built a monitor, a rule-based retraining trigger and a dashboard around it.
 
 ## Setup
 - **Data:** the public Kaggle credit-card fraud dataset, 284,807 transactions, 0.173% fraud.
@@ -66,4 +66,4 @@ The drift monitor (KS/PSI per feature, the two-key rule, a JSON report), the ret
 
 **Stack:** Python · pandas · scikit-learn · XGBoost · imbalanced-learn · SciPy · Evidently · Streamlit · matplotlib
 
-*The code lives in a private school repository; the dataset is not redistributed here.*
+*The code lives in a private repository; the dataset is not redistributed here.*

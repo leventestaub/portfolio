@@ -1,6 +1,6 @@
 # Robotics · RL control, a tic-tac-toe arm and a humanoid
 
-Three robotics projects from BUas (Nov 2025 – Jan 2026): a reinforcement-learning controller for a lab pipetting robot, a robot arm that plays tic-tac-toe against people, and experiments on a humanoid.
+Three robotics projects (Nov 2025 – Jan 2026): a reinforcement-learning controller for a lab pipetting robot, a robot arm that plays tic-tac-toe against people, and experiments on a humanoid.
 
 ## 1. Reinforcement learning: a controller for a pipetting robot
 **Task:** move the pipette tip of an Opentrons OT-2 to a target point (a plant's root tip on a petri dish) in a PyBullet simulation, within the **1 mm** accuracy the task required. Each team member built and trained their own controller; the team shared one hyperparameter search.
@@ -40,7 +40,7 @@ flowchart LR
 The RL controller met the 1 mm requirement on every target, without overshoot. PID was still more precise and settled faster (0.3 s against 3.1 s on average), so the integrated pipeline in the [plant-root project](plant-root-phenotyping.md) uses PID. The RL policy, however, learned the task from the reward alone, with no model of the robot.
 
 ## 2. Robot arm that plays tic-tac-toe
-**Group project (Nov 2025).** A Niryo robot arm plays tic-tac-toe against a person on a real board with real pieces.
+**Team project (Nov 2025).** A Niryo robot arm plays tic-tac-toe against a person on a real board with real pieces.
 
 ![The Niryo arm with the tic-tac-toe board and pieces](images/robotics/tictactoe-arm.jpg)
 
@@ -62,8 +62,8 @@ This was exploratory: no benchmark or measured results.
 ## Limitations
 - The RL benchmark covers three targets, in simulation only.
 - The tic-tac-toe arm and the humanoid work have no measured results (detection accuracy, success rates).
-- Lab hardware and course-supplied simulators, so the code is not published.
+- Lab hardware and third-party simulators, so the code is not published.
 
 **Stack:** Python · Gymnasium · Stable-Baselines3 (SAC, PPO) · PyBullet · ClearML · Weights & Biases · OpenCV · pyniryo · TensorFlow/Keras · Unitree SDK2 (DDS) · ROS 2 · NVIDIA GR00T · Isaac Sim / Isaac Lab
 
-*The code lives in private school repositories.*
+*The code lives in private repositories.*
