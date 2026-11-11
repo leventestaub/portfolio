@@ -22,7 +22,7 @@ flowchart LR
 - Root length came from the skeleton of the mask. Each plant's root was traced with a Dijkstra shortest path from its top start node to the best end node, with upward moves penalised. A scoring step on pixel count, distance to the plant's anchor and overlap with the core zone picked one region per plant.
 - Kaggle competition on root length: **sMAPE 7.18%**, rank 14 on the leaderboard.
 
-![Left: raw plate image. Right: output of the 3-class variant (root red, shoot green) at threshold 0.5](images/plant-root/segmentation-overlay.png)
+![Left: raw plate image. Right: measurements from the final single-class model, with the main root per plant in red, branches in cyan and the main-root length in pixels](images/plant-root/root-measurements.png)
 
 ## Robot control
 - Opentrons OT-2 in a PyBullet simulation, wrapped as a Gymnasium environment. The work envelope was measured first.
@@ -56,6 +56,10 @@ Test patches containing roots (n = 157):
 | U-Net (baseline) | 8.8M | 0.646 | 0.558 | 0.813 |
 | DeepLabV3+ | 13.6M | 0.640 | 0.567 | **0.836** |
 | U-Net++ | 15.0M | 0.629 | 0.525 | 0.791 |
+
+![Per-patch IoU of the four architectures on all test patches with roots and on sparse patches; dots are patches, bars are means](images/plant-root/architecture-iou.png)
+
+![A sparse test patch: the baseline misses the lower part of the root (recall 0.534), Attention U-Net recovers it (recall 0.940)](images/plant-root/sparse-patch-comparison.png)
 
 **Findings**
 - The models differ (Friedman χ² = 47.8, p = 2.3e-10), mainly because U-Net++ is worse.
