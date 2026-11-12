@@ -53,6 +53,10 @@ Label drift alone (the fraud rate changes, the patterns don't) should lead to a 
 
 **Batch 4 is the important one.** No single feature crossed the PSI threshold, so the distribution layer raised nothing, yet AUC fell below 0.5 and the model caught none of the fraud in the batch (recall 0). Distribution monitoring alone misses this kind of failure; labelled performance checks are the safety net, and the count of KS-flagged features (all 29 in batch 4) is a cheap early hint.
 
+![The dashboard on batch 4: no feature crosses the PSI critical line, yet the verdict is "retrain" because ROC-AUC fell to 0.448](images/fraud/dashboard-batch4.png)
+
+![ROC-AUC and PR-AUC across the five batches, and the batch-4 confusion matrix: none of the 25 frauds caught](images/fraud/dashboard-performance.png)
+
 **Batch 5 shows the opposite problem:** a large fraud-rate change shifts every feature slightly, so 28 of 29 features fail KS and tier 4 fires while the model is fine. Suppressing tier 4 when AUC stays above about 0.85 would fix it.
 
 ## My part
