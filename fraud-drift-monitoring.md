@@ -59,9 +59,6 @@ Label drift alone (the fraud rate changes, the patterns don't) should lead to a 
 
 **Batch 5 shows the opposite problem:** a large fraud-rate change shifts every feature slightly, so 28 of 29 features fail KS and tier 4 fires while the model is fine. Suppressing tier 4 when AUC stays above about 0.85 would fix it.
 
-## My part
-The drift monitor (KS/PSI per feature, the two-key rule, a JSON report), the retraining trigger with its tier logic, and the Streamlit dashboard that runs both on a selected batch and shows the verdict, per-feature PSI and the AUC trend. I also reworked the analysis notebooks and wrote the project README. Teammates owned the EDA and baseline model and the drift analysis.
-
 ## Limitations
 - The drift batches are simulated, not real production data.
 - Labels are assumed to be available per batch; in practice they arrive late, which is exactly when batch-4-type drift hurts.
