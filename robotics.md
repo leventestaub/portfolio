@@ -5,7 +5,7 @@ Three robotics projects (Nov 2025 – Jan 2026): a reinforcement-learning contro
 ## 1. Reinforcement learning: a controller for a pipetting robot
 **Task:** move the pipette tip of an Opentrons OT-2 to a target point (a plant's root tip on a petri dish) in a PyBullet simulation, within the **1 mm** accuracy the task required. Each team member built and trained their own controller; the team shared one hyperparameter search.
 
-**First version: PPO.** I wrapped the simulator as a Gymnasium environment (observation = pipette and goal position, action = a velocity per axis, reward = minus the distance with a small time penalty and a success bonus, goals sampled inside the measured work envelope) and trained PPO on it. The policy learned to approach the targets but often stalled a few millimetres short: near the goal a plain distance reward barely changes, so there is little signal left for the last millimetre. The final version changed both the reward and the algorithm.
+**First version: PPO.** I wrapped the simulator as a Gymnasium environment (observation = pipette and goal position, action = a velocity per axis, reward = minus the distance, goals sampled inside the measured work envelope) and trained PPO on it. The policy learned to approach the targets but often stalled a few millimetres short: near the goal a plain distance reward barely changes, so there is little signal left for the last millimetre. The final version changed both the reward and the algorithm.
 
 **Final version: SAC with a dense, progress-based reward.**
 - **Simpler problem:** control in the X/Y plane with the height fixed.

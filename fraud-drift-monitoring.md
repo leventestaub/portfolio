@@ -51,7 +51,7 @@ Label drift alone (the fraud rate changes, the patterns don't) should lead to a 
 | 4 | Silent, many small shifts | 0.448 | **performance layer only** |
 | 5 | Label drift, fraud ×11.5 | 0.909 | tier 4 warning (a false alarm) |
 
-**Batch 4 is the important one.** No single feature crossed the PSI threshold, so the distribution layer raised nothing, yet AUC fell below 0.5 and the model caught none of the fraud in the batch (recall 0). Distribution monitoring alone misses this kind of failure; labelled performance checks are the safety net, and the count of KS-flagged features (all 29 in batch 4) is a cheap early hint.
+**Batch 4 is the important one.** No single feature crossed the PSI threshold, so no feature was actionable and the drift trigger stayed silent, yet AUC fell below 0.5 and the model caught none of the fraud in the batch (recall 0). Distribution monitoring alone misses this kind of failure; labelled performance checks are the safety net, and the count of KS-flagged features (all 29 in batch 4) is a cheap early hint.
 
 ![The dashboard on batch 4: no feature crosses the PSI critical line, yet the verdict is "retrain" because ROC-AUC fell to 0.448](images/fraud/dashboard-batch4.png)
 

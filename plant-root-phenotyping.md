@@ -20,7 +20,7 @@ flowchart LR
 ## Segmentation and measurement
 - U-Net in Keras on 256 px patches: **validation F1 0.863** for the root class (pixel level).
 - Root length came from the skeleton of the mask. Each plant's root was traced with a Dijkstra shortest path from its top start node to the best end node, with upward moves penalised. A scoring step on pixel count, distance to the plant's anchor and overlap with the core zone picked one region per plant.
-- Kaggle competition on root length: **sMAPE 7.18%**, rank 14 on the leaderboard.
+- Course Kaggle competition on root length: **sMAPE 7.18%**, rank 14 on the leaderboard.
 
 ![Left: raw plate image. Right: measurements from the final single-class model, with the main root per plant in red, branches in cyan and the main-root length in pixels](images/plant-root/root-measurements.png)
 
